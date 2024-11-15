@@ -29,6 +29,7 @@ interface Gallery {
 
 export interface WeddingDetails {
   eventType: string
+  reservedPax: number
   noOfPax: number
   title: string
   weddingPhoto: string
@@ -52,6 +53,7 @@ interface ActionStore {
 export const useDataStore = create<Store & ActionStore>()((set) => ({
   data: {
     eventType: '',
+    reservedPax: 0,
     noOfPax: 0,
     title: '',
     weddingPhoto: '',

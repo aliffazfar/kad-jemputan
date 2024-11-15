@@ -5,8 +5,10 @@ import WishCount from '@/components/moleculs/WishCount'
 import WishListItem from '@/components/moleculs/WishListItem'
 import { useRsvpStore } from '@/store/rsvps.store'
 import CustomPrimaryButton from '@/components/atoms/Button'
+import { useDataStore } from '@/store/data.store'
 
 export default function WishSection() {
+  const data = useDataStore((state) => state.data)
   const { rsvps, setRsvps, onOpen } = useRsvpStore((state) => state)
 
   useEffect(() => {
@@ -24,7 +26,8 @@ export default function WishSection() {
     const tidakHadirTotal = rsvps.filter((item) => {
       return item.isComing == false
     })
-    const hadirTotal = rsvps.reduce((acc, curr) => acc + curr.attendance, 0)
+    const hadirTotal =
+      rsvps.reduce((acc, curr) => acc + curr.attendance, 0) + data.reservedPax
     return [tidakHadirTotal.length, hadirTotal]
   }
 
