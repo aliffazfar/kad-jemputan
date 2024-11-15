@@ -4,7 +4,7 @@ export default function InitialSpinner() {
   return (
     <VStack
       h='100vh'
-      w='100vw'
+      w='100%'
       align='center'
       justify='center'
       backgroundRepeat='no-repeat'

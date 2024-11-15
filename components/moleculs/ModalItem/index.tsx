@@ -21,7 +21,7 @@ export default function ModalItem({ onClose, isOpen }: any) {
     <Suspense>
       <VStack
         h='100vh'
-        w='100vw'
+        w='100%'
         align='center'
         justify='center'
         bg='#fafaf9'
