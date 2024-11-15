@@ -2,9 +2,40 @@ import { Metadata } from 'next'
 import LayoutProvider from '../provider/provider'
 import { Suspense } from 'react'
 
+const title = 'Akad Nikah: Amira & Aliff'
+const description = 'Akad Nikah: Amira & Aliff'
+const creator = 'Aliff Azfar'
+const url = 'https:/solemnizationofaliffandamira.my'
+
 export const metadata: Metadata = {
-  title: 'Majlis Pernikahan: Amira & Aliff',
-  description: 'Majlis Pernikahan: Amira & Aliff',
+  title,
+  description,
+  openGraph: {
+    type: 'website',
+    url,
+    title,
+    description,
+    siteName: title,
+    images: [
+      {
+        url: '/banner.jpg',
+      },
+    ],
+  },
+  twitter: {
+    title,
+    description,
+    card: 'summary',
+    site: creator,
+    creator,
+    images: '/banner.jpg',
+  },
+  applicationName: title,
+  authors: [{ name: creator }],
+  generator: 'Next.js',
+  referrer: 'origin-when-cross-origin',
+  creator,
+  publisher: creator,
 }
 
 export default function RootLayout({
