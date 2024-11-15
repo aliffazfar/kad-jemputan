@@ -58,9 +58,9 @@ export default function MainSection() {
                 {data.weddingCeremony?.addressLocation}
               </Text>
             </Container>
-            <a href={'#akad'}>
+            {/* <a href={'#akad'}>
               <CustomPrimaryButton size='sm' title='Simpan Tarikh' />
-            </a>
+            </a> */}
           </VStack>
         </AttentionSeeker>
       </Fade>
