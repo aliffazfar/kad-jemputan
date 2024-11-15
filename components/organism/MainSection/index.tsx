@@ -1,6 +1,6 @@
 import { Heading, VStack, Text, Center, Container } from '@chakra-ui/react'
 import React from 'react'
-import CustomPrimaryButton from '@/components/atoms/Button'
+// import CustomPrimaryButton from '@/components/atoms/Button'
 import { AttentionSeeker, Fade } from 'react-awesome-reveal'
 import dynamic from 'next/dynamic'
 import { useDataStore } from '@/store/data.store'
