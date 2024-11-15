@@ -25,7 +25,7 @@ pnpm dev
 ## Use your own data
 
 ```json
-eturn {
+{
     eventType: 'Akad Nikah',
     noOfPax: 200,
     title: 'Amira & Aliff',
