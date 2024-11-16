@@ -33,7 +33,7 @@ export const getData = async () => {
         month: 'January',
         year: '2025',
       },
-      time: 'Pukul 09.00 pagi - 2.00 petang',
+      time: 'Pukul 09.00 pagi - 1.00 petang',
       address: '47977, Jalan Ara 3/2, 43000 Kajang, Selangor',
       addressLocation: 'Serambi Villa',
       mapLink: 'https://maps.app.goo.gl/1J4dEpjxgyHZ6jqC9',
