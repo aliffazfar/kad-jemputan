@@ -1,11 +1,5 @@
 import { Box, Container, Flex, Fade, useDisclosure } from '@chakra-ui/react'
-import {
-  FaCalendarAlt,
-  FaHome,
-  FaPhotoVideo,
-  FaInfoCircle,
-  FaGift,
-} from 'react-icons/fa'
+import { FaCalendarAlt, FaHome, FaPhotoVideo, FaGift } from 'react-icons/fa'
 import { IoMailOpen } from 'react-icons/io5'
 import NavbarItem from './NavbarItem'
 import { useDataStore } from '@/store/data.store'

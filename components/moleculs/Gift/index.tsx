@@ -72,7 +72,11 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
                 justifyContent={'center'}
                 mb={2}
               >
-                <Image src={currentBank.logo || ''} width={'25px'} />
+                <Image
+                  src={currentBank.logo || ''}
+                  width={'25px'}
+                  alt='currentBank'
+                />
                 <Text fontWeight='bold' color={'white'} fontSize={'16px'}>
                   {currentBank.title}
                 </Text>
