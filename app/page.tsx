@@ -1,5 +1,11 @@
 'use client'
-import React, { Fragment, useCallback, useEffect, useRef } from 'react'
+import React, {
+  Fragment,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import FloatNav from '@/components/moleculs/Navbar/FloatNav'
 import ModalItem from '@/components/moleculs/ModalItem'
 import MainSection from '@/components/organism/MainSection'
@@ -17,7 +23,8 @@ import { useRouter } from 'next/navigation'
 import ProgrammeSection from '@/components/organism/ProgrammeSection'
 import dayjs from 'dayjs'
 import 'dayjs/locale/ms'
-import InitialSpinner from '@/components/atoms/Custom/InitialSpinner'
+import { InitialSpinner } from '@/components/atoms/Custom/InitialSpinner'
+import { PetalBackground } from '@/components/atoms/Custom/ParticleBackground'
 
 dayjs.locale('ms')
 
@@ -28,9 +35,9 @@ const Navbar = dynamic(() => import('@/components/moleculs/Navbar'), {
 export default function HomePage() {
   const router = useRouter()
   const [ref] = useInView(false)
-  const { isOpen, onOpen, onClose } = useDisclosure()
   const { setData } = useDataStore()
 
+  const [isOpen, setOpen] = useState(true)
   const isFirstMount = useRef(true)
 
   const getWeddingData = useCallback(async () => {
@@ -44,14 +51,15 @@ export default function HomePage() {
 
   useEffect(() => {
     getWeddingData()
-    onOpen()
     isFirstMount.current = false
   }, [])
 
   if (isFirstMount.current) return <InitialSpinner />
-  if (isOpen) return <ModalItem onClose={onClose} isOpen={isOpen} />
+  if (isOpen)
+    return <ModalItem onClose={() => setOpen(false)} isOpen={isOpen} />
   return (
     <Fragment>
+      <PetalBackground />
       <FloatNav />
       <div ref={ref}>
         <MainSection />

@@ -1,0 +1,49 @@
+.petalContainer {
+  position: fixed;
+  z-index: 0;
+  width: 420px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  background: linear-gradient(to right, #24243e, #4f6057, #0f0c29);
+  border-radius: 50%;
+  opacity: 0;
+  animation: fall 20s linear infinite;
+  top: var(--top);
+  left: 0;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translateX(var(--translate-x)) translateY(var(--translate-y))
+      rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Add animation for petals that go off screen */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}

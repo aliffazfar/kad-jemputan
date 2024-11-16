@@ -37,7 +37,12 @@ export default function WishSection() {
     <Fragment>
       <Fade duration={2000}>
         <AttentionSeeker effect='pulse'>
-          <Heading textAlign='center' color='brand.100' bgColor={'#fafaf9'}>
+          <Heading
+            textAlign='center'
+            color='brand.100'
+            bgColor={'#fafaf9'}
+            id='ucapan'
+          >
             Kehadiran
           </Heading>
         </AttentionSeeker>

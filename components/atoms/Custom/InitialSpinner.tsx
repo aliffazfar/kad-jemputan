@@ -1,6 +1,6 @@
 import { Text, VStack, Spinner } from '@chakra-ui/react'
 
-export default function InitialSpinner() {
+export function InitialSpinner() {
   return (
     <VStack
       h='100vh'

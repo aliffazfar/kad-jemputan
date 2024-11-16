@@ -20,6 +20,13 @@ const fonts = {
 }
 
 const theme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        bg: '#fafaf9',
+      },
+    },
+  },
   colors: {
     brand: {
       100: '#4F6057',

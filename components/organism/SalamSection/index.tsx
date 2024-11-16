@@ -46,7 +46,7 @@ export default function SalamSection() {
               >
                 Dengan memohon rahmat dan kurniaan Allah <br /> Subhanahu Wa
                 Ta'ala, insyaaAllah kami akan <br /> menjalankan majlis
-                pernikahan
+                perkahwinan
               </Text>
               <VStack>
                 <Text fontFamily='Cinzel Decorative' fontSize={26}>

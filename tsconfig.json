@@ -6,7 +6,8 @@
       "@/store/*": ["store/*"],
       "@/services/*": ["services/*"],
       "@/firebase/*": ["firebase/*"],
-      "@/utils/*": ["utils/*"]
+      "@/utils/*": ["utils/*"],
+      "@/styles/*": ["styles/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

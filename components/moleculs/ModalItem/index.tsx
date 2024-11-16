@@ -32,8 +32,8 @@ export default function ModalItem({ onClose, isOpen }: any) {
       >
         <Fade duration={2000}>
           <AttentionSeeker effect='pulse'>
-            <VStack gap={6}>
-              <Text align='center' fontSize='lg'>
+            <VStack gap={0}>
+              <Text align='center' fontSize='lg' my={6}>
                 AKAD NIKAH
               </Text>
               <Stack direction='column' gap={4}>
@@ -51,12 +51,11 @@ export default function ModalItem({ onClose, isOpen }: any) {
                   </VStack>
                 </Center>
                 <Center>
-                  <VStack marginTop={3}>
+                  <VStack mt={3} mb={6}>
                     <Text fontSize='xs' align='center'>
                       Kepada Ybhg.
                       <br />
-                      Dato' | Datin | Tuan | Puan | Encik | Cik
-                      <br />
+                      Dato' | Datin | Tuan | Puan | Encik | Cik <br />
                     </Text>
                   </VStack>
                 </Center>
