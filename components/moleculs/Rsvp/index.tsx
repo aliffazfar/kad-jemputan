@@ -81,7 +81,7 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
   }, [isOpen, rsvps, data.title, data.noOfPax])
 
   const handleKehadiran = (value: 'hadir' | 'tidakHadir') => {
-    if (value === 'hadir' && attendance == 0) {
+    if (value === 'hadir') {
       setAttendance(1)
     } else {
       setAttendance(0)

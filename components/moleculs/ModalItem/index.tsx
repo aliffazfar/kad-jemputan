@@ -34,7 +34,7 @@ export default function ModalItem({ onClose, isOpen }: any) {
           <AttentionSeeker effect='pulse'>
             <VStack gap={0}>
               <Text align='center' fontSize='lg' my={6}>
-                AKAD NIKAH
+                {data.eventType.toUpperCase()}
               </Text>
               <Stack direction='column' gap={4}>
                 <Center>

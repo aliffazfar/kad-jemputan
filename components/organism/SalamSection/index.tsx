@@ -39,10 +39,9 @@ export default function SalamSection() {
               </Text>
               <Text
                 align='center'
-                fontSize={14}
+                fontSize={13}
                 fontFamily='Poly'
                 color='brand.100'
-                fontWeight='bold'
               >
                 Dengan memohon rahmat dan kurniaan Allah <br /> Subhanahu Wa
                 Ta'ala, insyaaAllah kami akan <br /> menjalankan majlis

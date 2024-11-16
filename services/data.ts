@@ -6,7 +6,7 @@ export const getData = async () => {
   // const url = process.env.NEXT_PUBLIC_API as string
   // const data = await axios.get(url)
   return {
-    eventType: 'Akad Nikah',
+    eventType: 'Ijab Qabul',
     reservedPax: 120,
     noOfPax: 200,
     title: 'Amira & Aliff',

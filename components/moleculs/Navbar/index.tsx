@@ -43,8 +43,8 @@ export default function Navbar({ isShow }: Readonly<{ isShow: boolean }>) {
                 href='#gallery'
               />
             )}
-            <NavbarItem icon={<IoMailOpen color='white' />} onClick={onOpen} />
             <NavbarItem icon={<FaGift color='white' />} onClick={onGiftOpen} />
+            <NavbarItem icon={<IoMailOpen color='white' />} onClick={onOpen} />
           </Flex>
         </Box>
       </Container>

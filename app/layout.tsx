@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import LayoutProvider from '../provider/provider'
 import { Suspense } from 'react'
 
-const title = 'Akad Nikah: Amira & Aliff'
-const description = 'Akad Nikah: Amira & Aliff'
+const title = 'Ijab Qabul: Amira & Aliff'
+const description = 'Ijab Qabul: Amira & Aliff'
 const creator = 'Aliff Azfar'
 const url = 'https:/solemnizationofaliffandamira.my'
 

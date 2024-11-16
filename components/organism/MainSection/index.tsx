@@ -38,10 +38,14 @@ export default function MainSection() {
               {data?.title}
             </Heading>
             <Container>
-              <Text align='center' fontSize='xs'>
-                Kami akan berkahwin, <br />
-                dan ingin Anda menjadi sebahagian <br />
-                dari hari istimewa kami!
+              <Text align='center' fontSize='xs' px={6}>
+                Beras Kunyit Kami Taburi,
+                <br />
+                Air Mawar Direnjis Wangi,
+                <br />
+                Undangan Kami Setulus Hati,
+                <br />
+                Harap Sudi Datang Merai
               </Text>
               <TimeBoxWithNoSSR data={data.countDownDate} />
               <Text
@@ -58,9 +62,6 @@ export default function MainSection() {
                 {data.weddingCeremony?.addressLocation}
               </Text>
             </Container>
-            {/* <a href={'#akad'}>
-              <CustomPrimaryButton size='sm' title='Simpan Tarikh' />
-            </a> */}
           </VStack>
         </AttentionSeeker>
       </Fade>

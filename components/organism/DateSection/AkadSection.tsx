@@ -1,7 +1,6 @@
 import {
   Container,
   VStack,
-  Heading,
   HStack,
   Text,
   Box,
@@ -14,7 +13,7 @@ import CustomPrimaryButton from '../../atoms/Button'
 import { useLocationStore } from '@/store/location.store'
 
 interface AkadProps {
-  icon: React.ReactNode
+  icon?: React.ReactNode
   title: string
   hari: string
   tanggal: string
@@ -50,10 +49,10 @@ export default function AkadSection({
     >
       <VStack color='brand.100' gap={1}>
         {icon}
-        <Heading fontFamily='Niconne' fontWeight='light'>
-          {title}
-        </Heading>
-        <HStack fontFamily='Libre Baskerville' fontSize='2xl'>
+        <Text align='center' fontSize='lg' mb={2}>
+          {title.toUpperCase()}
+        </Text>
+        <HStack fontSize='xl'>
           <Flex w='33%'>
             <Text>{hari}</Text>
           </Flex>
@@ -65,7 +64,7 @@ export default function AkadSection({
               borderStartWidth={2}
             />
             <Box lineHeight={9} textAlign='center'>
-              <Text fontSize='4xl'>{tanggal}</Text>
+              <Text fontSize='3xl'>{tanggal}</Text>
               <Text fontSize='2xl'>{tahun}</Text>
             </Box>
             <Divider
@@ -88,9 +87,11 @@ export default function AkadSection({
         <Text fontWeight='bold' fontSize='sm' marginTop={2}>
           Tempat
         </Text>
-        <Text align='center' fontSize='sm' marginBottom={4}>
+        <Text align='center' fontSize='sm'>
           <span>{lokasi}</span>
-          <br /> {alamat}
+        </Text>
+        <Text align='center' fontSize='sm' marginBottom={4} px={12}>
+          {alamat}
         </Text>
         <CustomPrimaryButton
           onClick={onOpen}

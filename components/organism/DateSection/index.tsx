@@ -36,12 +36,12 @@ export default function DateSection() {
         </AttentionSeeker>
         {isAkadAvailable ? (
           <AkadSection
-            icon={
-              <FaHandHoldingHeart
-                style={{ color: '#4F6057', fontSize: '2.4rem' }}
-              />
-            }
-            title='Akad Nikah'
+            // icon={
+            //   <FaHandHoldingHeart
+            //     style={{ color: '#4F6057', fontSize: '2.4rem' }}
+            //   />
+            // }
+            title={data.eventType}
             hari={dayjs(data.weddingCeremony?.date).format('dddd')}
             tanggal={dayjs(data.weddingCeremony?.date).format('DD')}
             tahun={dayjs(data.weddingCeremony?.date).format('YYYY')}
