@@ -26,7 +26,7 @@ export const getData = async () => {
     countDownDate: '2025-01-25T09:00:00+08:00',
     weddingCeremony: {
       date: '2025-01-25T09:00:00+08:00',
-      endDate: '2025-01-25T14:00:00+08:00',
+      endDate: '2025-01-25T13:00:00+08:00',
       dates: {
         day: 'Sabtu',
         date: '25',
