@@ -1,5 +1,4 @@
 import { Box, Heading } from '@chakra-ui/react'
-import { FaHandHoldingHeart } from 'react-icons/fa'
 import AkadSection from './AkadSection'
 import { GiBigDiamondRing } from 'react-icons/gi'
 import { AttentionSeeker, Fade } from 'react-awesome-reveal'
