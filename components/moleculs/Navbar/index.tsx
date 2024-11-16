@@ -1,21 +1,27 @@
-import { Box, Container, Flex, Fade } from '@chakra-ui/react'
+import { Box, Container, Flex, Fade, useDisclosure } from '@chakra-ui/react'
 import {
   FaCalendarAlt,
   FaHome,
   FaPhotoVideo,
   FaInfoCircle,
+  FaGift,
 } from 'react-icons/fa'
 import { IoMailOpen } from 'react-icons/io5'
 import NavbarItem from './NavbarItem'
 import { useDataStore } from '@/store/data.store'
 import RsvpForm from '../Rsvp'
 import { useRsvpStore } from '@/store/rsvps.store'
+import GiftModal from '../Gift'
 
 export default function Navbar({ isShow }: Readonly<{ isShow: boolean }>) {
+  const {
+    isOpen: isGiftOpen,
+    onOpen: onGiftOpen,
+    onClose: onGiftClose,
+  } = useDisclosure()
   const { onOpen, onClose, isOpen } = useRsvpStore((state) => state)
   const data = useDataStore((state) => state.data)
   const isGalleryAvailable = data?.galleries || false
-  const isProgrammeAvailable = data?.programme || false
 
   return (
     <Fade in={isShow}>
@@ -43,17 +49,13 @@ export default function Navbar({ isShow }: Readonly<{ isShow: boolean }>) {
                 href='#gallery'
               />
             )}
-            {isProgrammeAvailable && (
-              <NavbarItem
-                icon={<FaInfoCircle color='white' />}
-                href='#programme'
-              />
-            )}
             <NavbarItem icon={<IoMailOpen color='white' />} onClick={onOpen} />
+            <NavbarItem icon={<FaGift color='white' />} onClick={onGiftOpen} />
           </Flex>
         </Box>
       </Container>
       <RsvpForm isOpen={isOpen} onClose={onClose} />
+      <GiftModal isOpen={isGiftOpen} onClose={onGiftClose} />
     </Fade>
   )
 }

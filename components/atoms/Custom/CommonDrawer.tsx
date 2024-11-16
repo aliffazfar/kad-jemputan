@@ -20,6 +20,7 @@ interface RsvpDrawerProps {
   title: string
   imageUrl?: string
   imagePostion?: string
+  isFixedHeight?: boolean
 }
 
 export const CommonDrawer = ({
@@ -29,6 +30,7 @@ export const CommonDrawer = ({
   title,
   imageUrl,
   imagePostion,
+  isFixedHeight = false,
 }: RsvpDrawerProps) => {
   const data = useDataStore((state) => state.data)
 
@@ -47,7 +49,7 @@ export const CommonDrawer = ({
       <DrawerContent
         width='420px'
         mx='auto'
-        // height='65vh !important'
+        height={isFixedHeight ? '65vh !important' : undefined}
         px={2}
         pt={2}
         pb={4}
@@ -103,7 +105,12 @@ export const CommonDrawer = ({
               </Box>
             </VStack>
           </Box>
-          {children}
+          <Box
+            display={isFixedHeight ? 'block' : undefined}
+            overflowY={isFixedHeight ? 'scroll' : undefined}
+          >
+            {children}
+          </Box>
         </Box>
       </DrawerContent>
     </Drawer>

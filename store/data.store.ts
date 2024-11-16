@@ -27,10 +27,27 @@ interface Gallery {
   imageUrl: string
 }
 
+interface Gift {
+  bank: {
+    bankName: string
+    bankNo?: string
+    accountName: string
+    qrImg: string
+    qrDownloadImg: string
+  }[]
+  wishlist?: {
+    itemName: string
+    imgSrc: string
+    itemLink: string
+    hasReceived: boolean
+  }[]
+}
+
 export interface WeddingDetails {
   eventType: string
   reservedPax: number
   noOfPax: number
+  gift?: Gift
   title: string
   weddingPhoto: string
   grooms: Person
