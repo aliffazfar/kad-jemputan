@@ -5,7 +5,14 @@ import { Suspense } from 'react'
 const title = 'Ijab Qabul: Amira & Aliff'
 const description = 'Ijab Qabul: Amira & Aliff'
 const creator = 'Aliff Azfar'
-const url = 'https:/solemnizationofaliffandamira.my'
+const url = 'https://ijabqabulaliffdanamira.my'
+
+const ogImage = {
+  url: '/banner.webp',
+  width: 1200,
+  height: 630,
+  alt: 'Ijab Qabul: Amira & Aliff Wedding',
+}
 
 export const metadata: Metadata = {
   title,
@@ -16,19 +23,15 @@ export const metadata: Metadata = {
     title,
     description,
     siteName: title,
-    images: [
-      {
-        url: '/banner.jpg',
-      },
-    ],
+    images: [ogImage],
   },
   twitter: {
     title,
     description,
-    card: 'summary',
+    card: 'summary_large_image',
     site: creator,
     creator,
-    images: '/banner.jpg',
+    images: ogImage,
   },
   applicationName: title,
   authors: [{ name: creator }],
@@ -37,7 +40,6 @@ export const metadata: Metadata = {
   creator,
   publisher: creator,
 }
-
 export default function RootLayout({
   children,
 }: Readonly<{
