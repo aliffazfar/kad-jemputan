@@ -119,12 +119,11 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
               <CustomPrimaryButton
                 title={'Muat turun'}
                 size={'xs'}
-                borderWidth={1}
-                borderColor={'#fffbf3'}
-                borderRadius={5}
+                bgColor={'brand.200'}
+                textColor={'brand.100'}
                 px={4}
                 py={3}
-                icon={<MdOutlineFileDownload color={'#fffbf3'} size={22} />}
+                icon={<MdOutlineFileDownload color={'#fffbf3'} size={18} />}
                 onClick={() => handleDownload(index)}
               />
             </Fragment>

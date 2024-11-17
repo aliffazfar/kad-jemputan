@@ -178,19 +178,18 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
               flex={1}
               size='sm'
               title='Hadir'
-              borderColor={'brand.200'}
+              bgColor={'brand.200'}
+              textColor={'brand.100'}
               borderWidth={1}
               onClick={() => handleKehadiran('hadir')}
-              borderRadius={10}
               icon={<MdCheck color='white' size={'22px'} />}
             />
             <CustomPrimaryButton
               flex={1}
               size='sm'
               title='Tidak Hadir'
-              borderColor={'brand.200'}
-              borderWidth={1}
-              borderRadius={10}
+              bgColor={'brand.200'}
+              textColor={'brand.100'}
               onClick={() => handleKehadiran('tidakHadir')}
               icon={<IoClose color='white' size={'22px'} />}
             />
@@ -265,14 +264,12 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
                       flex={1}
                       size='sm'
                       title='Hantar'
-                      borderRadius={10}
                       onClick={onSubmit}
                     />
                     <CustomPrimaryButton
                       flex={1}
                       size='sm'
                       title='Batal'
-                      borderRadius={10}
                       onClick={() => {
                         setKehadiran('')
                         if (isClosedRsvp) {
@@ -322,10 +319,9 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
             flex={1}
             size='sm'
             title='Berikan Ucapan'
-            borderColor={'brand.200'}
-            borderWidth={1}
+            bgColor={'brand.200'}
+            textColor={'brand.100'}
             onClick={() => handleKehadiran('tidakHadir')}
-            borderRadius={10}
             width={'100%'}
             sx={{ paddingTop: '8px', paddingBottom: '8px' }}
           />

@@ -46,19 +46,17 @@ export default function LocationDrawer({ onClose, isOpen }: any) {
               flex={1}
               size='sm'
               title=' Maps'
-              borderColor={'brand.200'}
-              borderWidth={1}
+              bgColor={'brand.200'}
+              textColor={'brand.100'}
               onClick={() => openInNewTab(data.weddingCeremony?.mapLink)}
-              borderRadius={10}
               icon={<FaGoogle color='white' size={'13px'} />}
             />
             <CustomPrimaryButton
               flex={1}
               size='sm'
               title='Waze'
-              borderColor={'brand.200'}
-              borderWidth={1}
-              borderRadius={10}
+              bgColor={'brand.200'}
+              textColor={'brand.100'}
               onClick={() => openInNewTab(data.weddingCeremony?.wazeLink)}
               icon={<LiaWaze color='white' size={'19px'} />}
             />
