@@ -19,7 +19,7 @@ export default function CustomPrimaryButton({
 
   const IconWithHover = Icon
     ? React.cloneElement(Icon as unknown as ReactElement, {
-        color: isHovered ? '#64332e' : 'brand.200',
+        color: isHovered ? 'brand.200' : 'brand.200',
       })
     : null
 
