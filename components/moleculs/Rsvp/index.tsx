@@ -50,7 +50,7 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
   const [kehadiran, setKehadiran] = useState<'hadir' | 'tidakHadir' | ''>()
   const [attendance, setAttendance] = useState(0)
   const [name, setName] = useState('')
-  const [mobileNo, setMobileNo] = useState<string>()
+  const [mobileNo, setMobileNo] = useState<string>('')
   const [wish, setWish] = useState('')
 
   const mobileNoErrorRef = useRef(false)
