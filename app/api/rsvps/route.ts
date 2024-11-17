@@ -1,7 +1,6 @@
 import { db } from '@/firebase/index'
 import { RsvpData } from '@/store/rsvps.store'
-import dayjs from 'dayjs'
-import { addDoc, collection, getDocs } from 'firebase/firestore'
+import { addDoc, collection, getDocs, orderBy, query } from 'firebase/firestore'
 import { NextRequest } from 'next/server'
 
 const headers = {
@@ -13,19 +12,36 @@ const headers = {
 
 export async function GET() {
   try {
-    const querySnapshot = await getDocs(collection(db, 'rsvps'))
+    const q = query(collection(db, 'rsvps'), orderBy('timestamp', 'desc'))
+    const querySnapshot = await getDocs(q)
+    if (querySnapshot.empty) {
+      return new Response(JSON.stringify({ data: [] }), {
+        status: 200,
+        headers,
+      })
+    }
+
     const dataArray = querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...(doc.data() as RsvpData),
     }))
-    dataArray.sort((a, b) =>
-      dayjs(b.timestamp).isBefore(dayjs(a.timestamp)) ? -1 : 1
-    )
-    return new Response(JSON.stringify(dataArray), { status: 200, headers })
-  } catch (error) {
-    return new Response(JSON.stringify({ error: 'Error fetching RSVPs' }), {
-      status: 500,
+
+    return new Response(JSON.stringify(dataArray), {
+      status: 200,
+      headers,
     })
+  } catch (error) {
+    console.error('Error fetching RSVPs:', error)
+    return new Response(
+      JSON.stringify({
+        error: 'Error fetching RSVPs',
+        message: error instanceof Error ? error.message : 'Unknown error',
+      }),
+      {
+        status: 500,
+        headers,
+      }
+    )
   }
 }
 
