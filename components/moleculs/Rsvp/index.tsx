@@ -68,7 +68,8 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
         return
       }
     }
-    const reservedPax = process?.env?.NEXT_PUBLIC_AUDIO ?? data.reservedPax
+    const reservedPax =
+      process?.env?.NEXT_PUBLIC_RESERVED_PAX ?? data.reservedPax
     const hadirTotal =
       rsvps.reduce((acc, curr) => acc + curr.attendance, 0) +
       Number(reservedPax)

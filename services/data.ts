@@ -7,7 +7,7 @@ export const getData = async () => {
   // const data = await axios.get(url)
   return {
     eventType: 'Ijab Qabul',
-    reservedPax: 120,
+    reservedPax: 160,
     noOfPax: 200,
     title: 'Amira & Aliff',
     weddingPhoto:
