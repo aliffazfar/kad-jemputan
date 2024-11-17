@@ -2,6 +2,11 @@
 
 A digital wedding invitation application built with Next.js.
 
+## 🌐 Live Demo
+
+- Primary Domain: [ijabqabulaliffdanamira.my](https://ijabqabulaliffdanamira.my)
+- Backup Site: [kad-jemputan.vercel.app](https://kad-jemputan.vercel.app)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -132,6 +137,3 @@ interface WeddingData {
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](link-to-your-issues-page).
 
-## 📄 License
-
-This project is licensed under the [Your License] - see the LICENSE.md file for details.
