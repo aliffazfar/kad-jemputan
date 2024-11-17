@@ -64,7 +64,7 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
                 my={index > 0 ? 5 : 0}
                 borderBottomWidth={index > 0 ? 1 : 0}
                 width={'100%'}
-                borderBottomColor={'white'}
+                borderBottomColor={'#fffbf3'}
               />
               <VStack
                 flexDirection={'row'}
@@ -82,7 +82,7 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
                 </Text>
               </VStack>
               <Box
-                bg='white'
+                bg='#fffbf3'
                 overflow='hidden'
                 width={'210px'}
                 alignItems={'center'}
@@ -90,14 +90,14 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
                 <Image src={item.qrImg} objectFit='contain' alt='' />
               </Box>
               <Box my={2} w='100%' textAlign={'center'}>
-                <Text fontWeight='bold' color={'white'} mb={1}>
+                <Text fontWeight='bold' color={'#fffbf3'} mb={1}>
                   {item.accountName}
                 </Text>
                 {item.bankNo ? (
                   <Text
                     as='button'
                     onClick={() => handleCopy(item.bankNo!)}
-                    color='white'
+                    color={'#fffbf3'}
                     borderRadius='md'
                     fontWeight='bold'
                     fontSize='sm'
@@ -110,6 +110,7 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
                     <MdOutlineContentCopy
                       size={16}
                       style={{ marginRight: '5px' }}
+                      color={'#fffbf3'}
                     />
                     {item.bankNo}
                   </Text>
@@ -119,10 +120,11 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
                 title={'Muat turun'}
                 size={'xs'}
                 borderWidth={1}
+                borderColor={'#fffbf3'}
                 borderRadius={5}
                 px={4}
                 py={3}
-                icon={<MdOutlineFileDownload color='white' size={22} />}
+                icon={<MdOutlineFileDownload color={'#fffbf3'} size={22} />}
                 onClick={() => handleDownload(index)}
               />
             </Fragment>
@@ -136,7 +138,7 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
             borderTopWidth={1}
             width={'100%'}
             px={4}
-            borderBottomColor={'white'}
+            borderBottomColor={'#fffbf3'}
           >
             {wishlist.map((item, index) => (
               <Box
@@ -154,7 +156,7 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
                 py={1}
                 borderWidth={1}
                 borderRadius='md'
-                bg={'#fffbf3'}
+                bg={'brand.200'}
                 display='flex'
                 alignItems='center'
                 justifyContent='space-between'

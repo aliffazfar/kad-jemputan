@@ -24,7 +24,7 @@ export default function ModalItem({ onClose, isOpen }: any) {
         w='100%'
         align='center'
         justify='center'
-        bg='#fffbf3'
+        bg='brand.200'
         backgroundImage="url('/bg.webp')"
         backgroundRepeat='no-repeat'
         backgroundSize='cover'
@@ -39,13 +39,28 @@ export default function ModalItem({ onClose, isOpen }: any) {
               <Stack direction='column' gap={4}>
                 <Center>
                   <VStack spacing={4}>
-                    <Heading as='h2' size='3xl' textAlign='center'>
+                    <Heading
+                      as='h2'
+                      size='3xl'
+                      color={'brand.100'}
+                      textAlign='center'
+                    >
                       {data.brides.nick}
                     </Heading>
-                    <Heading as='h2' size='3xl' textAlign='center'>
+                    <Heading
+                      as='h2'
+                      size='3xl'
+                      textAlign='center'
+                      color={'brand.100'}
+                    >
                       &
                     </Heading>
-                    <Heading as='h2' size='3xl' textAlign='center'>
+                    <Heading
+                      as='h2'
+                      size='3xl'
+                      textAlign='center'
+                      color={'brand.100'}
+                    >
                       {data.grooms.nick}
                     </Heading>
                   </VStack>

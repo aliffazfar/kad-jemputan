@@ -15,7 +15,7 @@ export default function SalamSection() {
   const data = useDataStore((state) => state.data)
 
   return (
-    <Box sx={{ background: '#fffbf3' }} p={6} id='salam'>
+    <Box sx={{ background: 'brand.200' }} p={6} id='salam'>
       <Container
         sx={{ background: 'rgba(255, 255, 255, 0.29)' }}
         borderRadius={20}
@@ -34,21 +34,20 @@ export default function SalamSection() {
                 loading='lazy'
                 style={{ color: '#64332e' }}
               />
-              <Text fontSize={12} fontFamily='Poly' color='brand.100'>
+              <Text fontSize={12} fontFamily='Poly'>
                 Assalamu'alaikum Wr. Wb.
               </Text>
-              <Text
-                align='center'
-                fontSize={13}
-                fontFamily='Poly'
-                color='brand.100'
-              >
+              <Text align='center' fontSize={13} fontFamily='Poly'>
                 Dengan memohon rahmat dan kurniaan Allah <br /> Subhanahu Wa
                 Ta'ala, insyaaAllah kami akan <br /> menjalankan majlis
                 perkahwinan
               </Text>
               <VStack>
-                <Text fontFamily='Cinzel Decorative' fontSize={26}>
+                <Text
+                  fontFamily='Cinzel Decorative'
+                  fontSize={26}
+                  color='brand.100'
+                >
                   {data.brides?.name}
                 </Text>
                 <Text align='center' fontSize={14} margin={0}>
@@ -59,7 +58,11 @@ export default function SalamSection() {
               </VStack>
               <Heading>&</Heading>
               <VStack>
-                <Text fontFamily='Cinzel Decorative' fontSize={26}>
+                <Text
+                  fontFamily='Cinzel Decorative'
+                  fontSize={26}
+                  color='brand.100'
+                >
                   {data.grooms?.name}
                 </Text>
                 <Text align='center' fontSize={14} margin={0}>

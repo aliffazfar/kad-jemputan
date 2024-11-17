@@ -178,7 +178,7 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
               flex={1}
               size='sm'
               title='Hadir'
-              borderColor={'white'}
+              borderColor={'brand.200'}
               borderWidth={1}
               onClick={() => handleKehadiran('hadir')}
               borderRadius={10}
@@ -188,7 +188,7 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
               flex={1}
               size='sm'
               title='Tidak Hadir'
-              borderColor={'white'}
+              borderColor={'brand.200'}
               borderWidth={1}
               borderRadius={10}
               onClick={() => handleKehadiran('tidakHadir')}
@@ -211,7 +211,7 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
             margin={3}
             p={0}
             borderRadius={10}
-            bgColor='#fffbf3'
+            bgColor='brand.200'
             overflowY='auto'
             flex={1}
           >
@@ -322,7 +322,7 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
             flex={1}
             size='sm'
             title='Berikan Ucapan'
-            borderColor={'white'}
+            borderColor={'brand.200'}
             borderWidth={1}
             onClick={() => handleKehadiran('tidakHadir')}
             borderRadius={10}

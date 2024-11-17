@@ -7,7 +7,7 @@ export default function ProgrammeSection() {
   const data = useDataStore((state) => state.data)
   if (!data.programme) return null
   return (
-    <Box sx={{ background: '#fffbf3' }} p={6} id='programme'>
+    <Box sx={{ background: 'brand.200' }} p={6} id='programme'>
       <Container
         sx={{ background: 'rgba(255, 255, 255, 0.29)' }}
         borderRadius={20}

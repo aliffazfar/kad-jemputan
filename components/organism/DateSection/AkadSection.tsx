@@ -46,12 +46,12 @@ export default function AkadSection({
       my={8}
       boxShadow='xl'
     >
-      <VStack color='brand.100' gap={1}>
+      <VStack gap={1}>
         {icon}
         <Text align='center' fontSize='lg' mb={2}>
           {title.toUpperCase()}
         </Text>
-        <HStack fontSize='xl'>
+        <HStack fontSize='xl' color='brand.100'>
           <Flex w='33%'>
             <Text>{hari}</Text>
           </Flex>
@@ -77,13 +77,13 @@ export default function AkadSection({
             <Text>{bulan}</Text>
           </Flex>
         </HStack>
-        <Text fontWeight='bold' fontSize='sm' marginTop={2}>
+        <Text fontWeight='bold' fontSize='sm' marginTop={2} color='brand.100'>
           Masa
         </Text>
-        <Text fontWeight='bold' fontSize='sm'>
+        <Text fontSize='sm'>
           {jam} - {tamat ? tamat : 'Selesai'}
         </Text>
-        <Text fontWeight='bold' fontSize='sm' marginTop={2}>
+        <Text fontWeight='bold' fontSize='sm' marginTop={2} color='brand.100'>
           Tempat
         </Text>
         <Text align='center' fontSize='sm'>
@@ -95,7 +95,7 @@ export default function AkadSection({
         <CustomPrimaryButton
           onClick={onOpen}
           size='sm'
-          icon={<FaSearchLocation />}
+          icon={<FaSearchLocation color='brand.200' />}
           title='Maps'
         />
       </VStack>

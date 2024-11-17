@@ -13,7 +13,7 @@ export default function DateSection() {
   return (
     <Box
       sx={{
-        backgroundColor: '#fffbf3',
+        backgroundColor: 'brand.200',
         backgroundImage: "url('/bg.webp')",
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',

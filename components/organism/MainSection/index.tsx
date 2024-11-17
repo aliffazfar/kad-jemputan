@@ -21,7 +21,7 @@ export default function MainSection() {
       id='home'
       height='100vh'
       sx={{
-        backgroundColor: '#fffbf3',
+        backgroundColor: 'brand.200',
         backgroundImage: "url('/bg.webp')",
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',

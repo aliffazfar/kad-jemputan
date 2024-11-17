@@ -17,7 +17,7 @@ export default function FloatNav() {
       <Box
         boxShadow='xl'
         p={2}
-        bgColor='white'
+        bgColor='brand.200'
         border='1px'
         borderColor='gray.200'
         borderRadius={8}
@@ -29,15 +29,15 @@ export default function FloatNav() {
       >
         <Flex gap={2} flexDirection='column'>
           <NavbarItem
-            icon={<FaLocationDot color='white' size={20} />}
+            icon={<FaLocationDot color='#fffbf3' size={20} />}
             onClick={onOpen}
           />
           <NavbarItem
             icon={
               !isPlay ? (
-                <MdMusicOff color='white' />
+                <MdMusicOff color='#fffbf3' />
               ) : (
-                <MdMusicNote color='white' />
+                <MdMusicNote color='#fffbf3' />
               )
             }
             onClick={toggle}

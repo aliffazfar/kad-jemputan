@@ -23,7 +23,7 @@ export default function Navbar({ isShow }: Readonly<{ isShow: boolean }>) {
         <Box
           boxShadow='xl'
           p={2}
-          bgColor='white'
+          bgColor='brand.200'
           border='1px'
           borderColor='gray.200'
           borderRadius={8}
@@ -35,16 +35,22 @@ export default function Navbar({ isShow }: Readonly<{ isShow: boolean }>) {
           transform='translate(-50%, 0)'
         >
           <Flex gap={2}>
-            <NavbarItem icon={<FaHome color='white' />} href='#home' />
-            <NavbarItem icon={<FaCalendarAlt color='white' />} href='#akad' />
+            <NavbarItem icon={<FaHome color='#fffbf3' />} href='#home' />
+            <NavbarItem icon={<FaCalendarAlt color='#fffbf3' />} href='#akad' />
             {isGalleryAvailable && (
               <NavbarItem
-                icon={<FaPhotoVideo color='white' />}
+                icon={<FaPhotoVideo color='#fffbf3' />}
                 href='#gallery'
               />
             )}
-            <NavbarItem icon={<FaGift color='white' />} onClick={onGiftOpen} />
-            <NavbarItem icon={<IoMailOpen color='white' />} onClick={onOpen} />
+            <NavbarItem
+              icon={<FaGift color='#fffbf3' />}
+              onClick={onGiftOpen}
+            />
+            <NavbarItem
+              icon={<IoMailOpen color='#fffbf3' />}
+              onClick={onOpen}
+            />
           </Flex>
         </Box>
       </Container>

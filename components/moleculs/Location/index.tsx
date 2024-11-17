@@ -19,6 +19,7 @@ export default function LocationDrawer({ onClose, isOpen }: any) {
         onClose={onClose}
         imageUrl={'location.webp'}
         imagePostion='center 50%'
+        theme='black'
       >
         <VStack
           my={6}
@@ -45,7 +46,7 @@ export default function LocationDrawer({ onClose, isOpen }: any) {
               flex={1}
               size='sm'
               title=' Maps'
-              borderColor={'white'}
+              borderColor={'brand.200'}
               borderWidth={1}
               onClick={() => openInNewTab(data.weddingCeremony?.mapLink)}
               borderRadius={10}
@@ -55,7 +56,7 @@ export default function LocationDrawer({ onClose, isOpen }: any) {
               flex={1}
               size='sm'
               title='Waze'
-              borderColor={'white'}
+              borderColor={'brand.200'}
               borderWidth={1}
               borderRadius={10}
               onClick={() => openInNewTab(data.weddingCeremony?.wazeLink)}

@@ -19,7 +19,7 @@ export default function CustomPrimaryButton({
 
   const IconWithHover = Icon
     ? React.cloneElement(Icon as unknown as ReactElement, {
-        color: isHovered ? '#64332e' : 'white',
+        color: isHovered ? '#64332e' : 'brand.200',
       })
     : null
 
@@ -27,9 +27,9 @@ export default function CustomPrimaryButton({
     <Button
       size={size}
       bg={bgColor || 'brand.100'}
-      color={color || '#ffff'}
+      color={color || 'brand.200'}
       _hover={{
-        bg: '#ebedf0',
+        bg: 'brand.200',
         color: 'brand.100',
         borderColor: 'brand.100',
         border: '2px',
