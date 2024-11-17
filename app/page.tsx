@@ -43,8 +43,10 @@ export default function HomePage() {
 
   const getWeddingData = useCallback(async () => {
     try {
-      const response = await fetch('/api/wedding-details')
-      const responseRsvp = await fetch('/api/rsvps')
+      const response = await fetch('/api/wedding-details', {
+        cache: 'no-store',
+      })
+      const responseRsvp = await fetch('/api/rsvps', { cache: 'no-store' })
       if (!response.ok && !responseRsvp.ok) {
         throw new Error('Failed to fetch wedding details')
       }
@@ -53,6 +55,7 @@ export default function HomePage() {
       setData(data)
       if (rsvpData.length > 0) setRsvps(rsvpData)
     } catch (err) {
+      console.log('FAIL MAT')
       setData(initialData)
     } finally {
       setIsLoading(false)

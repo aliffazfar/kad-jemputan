@@ -4,6 +4,13 @@ import { db } from '@/firebase/index'
 import { WeddingDetails } from '@/store/data.store'
 import { initialData } from './initialData'
 
+const headers = {
+  'Content-Type': 'application/json',
+  'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+  Pragma: 'no-cache',
+  Expires: '0',
+}
+
 export async function GET() {
   try {
     const detailsRef = doc(db, 'wedding-details', 'current')
@@ -17,12 +24,12 @@ export async function GET() {
       await setDoc(detailsRef, initializeWeddingData)
       return new Response(JSON.stringify(initializeWeddingData), {
         status: 200,
-        headers: { 'Content-Type': 'application/json' },
+        headers,
       })
     }
     return new Response(JSON.stringify(detailsSnap.data()), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers,
     })
   } catch (error) {
     return new Response(
@@ -49,7 +56,7 @@ export async function PUT(request: NextRequest) {
       JSON.stringify({ message: 'Wedding details updated successfully' }),
       {
         status: 200,
-        headers: { 'Content-Type': 'application/json' },
+        headers,
       }
     )
   } catch (error) {
