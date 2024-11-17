@@ -2,6 +2,7 @@ import { db } from '@/firebase/index'
 import { RsvpData } from '@/store/rsvps.store'
 import dayjs from 'dayjs'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
+import { NextRequest } from 'next/server'
 
 export async function GET() {
   try {
@@ -21,10 +22,9 @@ export async function GET() {
   }
 }
 
-export async function POST(request) {
+export async function POST(request: NextRequest) {
   try {
     const newRsvp = await request.json()
-
     await addDoc(collection(db, 'rsvps'), newRsvp)
     return new Response(
       JSON.stringify({ message: 'RSVP added successfully' }),

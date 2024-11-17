@@ -9,8 +9,7 @@ import React, {
 import FloatNav from '@/components/moleculs/Navbar/FloatNav'
 import ModalItem from '@/components/moleculs/ModalItem'
 import MainSection from '@/components/organism/MainSection'
-import { getData } from '@/services/data'
-import { useDataStore, WeddingDetails } from '@/store/data.store'
+import { useDataStore } from '@/store/data.store'
 import SalamSection from '@/components/organism/SalamSection'
 import DateSection from '@/components/organism/DateSection'
 import GallerySection from '@/components/organism/GallerySection'
@@ -18,12 +17,13 @@ import '../styles/globals.css'
 import WishSection from '@/components/organism/WishSection'
 import { useInView } from 'react-power-ups'
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/navigation'
 import ProgrammeSection from '@/components/organism/ProgrammeSection'
 import dayjs from 'dayjs'
 import 'dayjs/locale/ms'
 import { InitialSpinner } from '@/components/atoms/Custom/InitialSpinner'
 import { PetalBackground } from '@/components/atoms/Custom/ParticleBackground'
+import { initialData } from './api/wedding-details/initialData'
+import { useRsvpStore } from '@/store/rsvps.store'
 
 dayjs.locale('ms')
 
@@ -32,28 +32,39 @@ const Navbar = dynamic(() => import('@/components/moleculs/Navbar'), {
 })
 
 export default function HomePage() {
-  const router = useRouter()
   const [ref] = useInView(false)
   const { setData } = useDataStore()
+  const { setRsvps } = useRsvpStore((state) => state)
+
+  const [isLoading, setIsLoading] = useState(true)
 
   const [isOpen, setOpen] = useState(true)
   const isFirstMount = useRef(true)
 
   const getWeddingData = useCallback(async () => {
     try {
-      const data = await getData()
-      setData(data as unknown as WeddingDetails)
-    } catch (error) {
-      router.push('/404')
+      const response = await fetch('/api/wedding-details')
+      const responseRsvp = await fetch('/api/rsvps')
+      if (!response.ok && !responseRsvp.ok) {
+        throw new Error('Failed to fetch wedding details')
+      }
+      const data = await response.json()
+      const rsvpData = await responseRsvp.json()
+      setData(data)
+      if (rsvpData.length > 0) setRsvps(rsvpData)
+    } catch (err) {
+      setData(initialData)
+    } finally {
+      setIsLoading(false)
     }
-  }, [getData])
+  }, [])
 
   useEffect(() => {
     getWeddingData()
     isFirstMount.current = false
   }, [])
 
-  if (isFirstMount.current) return <InitialSpinner />
+  if (isFirstMount.current || isLoading) return <InitialSpinner />
   if (isOpen)
     return <ModalItem onClose={() => setOpen(false)} isOpen={isOpen} />
   return (

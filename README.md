@@ -21,99 +21,26 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket_here
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id_here
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id_here
 NEXT_PUBLIC_AUDIO=your_music_link
-NEXT_PUBLIC_RESERVED_PAX=your_reserved_pax
 ```
 
 ### Installation
 
 1. Clone the repository
 2. Install dependencies:
+
 ```bash
 yarn install
 ```
 
 3. Run the development server:
+
 ```bash
 yarn dev
 ```
 
 ## 📝 Configuration
 
-### Data Structure
-
-To customize the wedding invitation, modify the following data structure in your application:
-
-```typescript
-interface WeddingData {
-  eventType: string;
-  noOfPax: number;
-  title: string;
-  weddingPhoto: string;
-  grooms: {
-    name: string;
-    nick: string;
-    fatherName: string;
-    motherName: string;
-  };
-  brides: {
-    name: string;
-    nick: string;
-    fatherName: string;
-  };
-  countDownDate: string;
-  weddingCeremony: {
-    date: string;
-    endDate: string;
-    dates: {
-      day: string;
-      date: string;
-      month: string;
-      year: string;
-    };
-    time: string;
-    address: string;
-    addressLocation: string;
-    mapLink: string;
-    wazeLink: string;
-  };
-  weddingReception: {
-    noOfPax: number;
-    date: string;
-    endDate: string;
-    dates: {
-      day: string;
-      date: string;
-      month: string;
-      year: string;
-    };
-    time: string;
-    address: string;
-    addressLocation: string;
-  };
-  programme: Array<{
-    title: string;
-    description: string;
-  }>;
-  galleries: Array<{
-    imageUrl: string;
-  }>;
-  gift: {
-    bank: Array<{
-      bankName: string;
-      bankNo: string;
-      accountName: string;
-      qrImg: string;
-      qrDownloadImg: string;
-    }>;
-    wishlist: Array<{
-      itemName: string;
-      imgSrc: string;
-      itemLink: string;
-      hasReceived: boolean;
-    }>;
-  };
-}
-```
+To customize the wedding invitation, modify the initialData.ts in app/api/wedding-details
 
 ## 🎯 Features
 
@@ -127,13 +54,12 @@ interface WeddingData {
 - Responsive design
 
 ## 📱 Screenshots
+
 ![Screenshot 2024-11-17 at 9 57 34 AM](https://github.com/user-attachments/assets/4a329e60-1012-4e0c-bbf8-aec303818f9b)
 ![Screenshot 2024-11-17 at 9 57 44 AM](https://github.com/user-attachments/assets/5f1716d2-36dd-4187-8c0a-4915eaed5f2f)
 ![Screenshot 2024-11-17 at 9 57 52 AM](https://github.com/user-attachments/assets/4512898d-041c-4183-b131-39ac741dace4)
 ![Screenshot 2024-11-17 at 9 58 14 AM](https://github.com/user-attachments/assets/5bb1b623-d805-4c41-8dbf-73420e1cb4f0)
 
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](link-to-your-issues-page).
-

@@ -3,10 +3,8 @@ import { create } from 'zustand'
 interface Person {
   name: string
   nick: string
-  fatherName: string
-  motherName: string
-  instagram: string
-  photo: string
+  fatherName?: string
+  motherName?: string
 }
 
 interface WeddingEvent {
@@ -15,6 +13,13 @@ interface WeddingEvent {
   mapLink: string
   wazeLink: string
   date: Date
+  dates?: {
+    day: string
+    date: string
+    month: string
+    year: string
+  }
+  time?: string
   endDate: Date
 }
 
@@ -49,7 +54,7 @@ export interface WeddingDetails {
   noOfPax: number
   gift?: Gift
   title: string
-  weddingPhoto: string
+  weddingPhoto?: string
   grooms: Person
   brides: Person
   countDownDate: Date

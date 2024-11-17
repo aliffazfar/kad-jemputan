@@ -1,5 +1,5 @@
 import { Box, Heading, Container, Center, VStack } from '@chakra-ui/react'
-import { Fragment, useEffect } from 'react'
+import { Fragment } from 'react'
 import { AttentionSeeker, Fade } from 'react-awesome-reveal'
 import WishCount from '@/components/moleculs/WishCount'
 import WishListItem from '@/components/moleculs/WishListItem'
@@ -9,25 +9,13 @@ import { useDataStore } from '@/store/data.store'
 
 export default function WishSection() {
   const data = useDataStore((state) => state.data)
-  const { rsvps, setRsvps, onOpen } = useRsvpStore((state) => state)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('/api/rsvps')
-      const data = await response.json()
-      if (data.length > 0) {
-        setRsvps(data)
-      }
-    }
-    fetchData()
-  }, [])
+  const { rsvps, onOpen } = useRsvpStore((state) => state)
 
   const totalKehadiran = () => {
     const tidakHadirTotal = rsvps.filter((item) => {
       return item.isComing == false
     })
-    const reservedPax =
-      process?.env?.NEXT_PUBLIC_RESERVED_PAX ?? data.reservedPax
+    const reservedPax = data.reservedPax
     const hadirTotal =
       rsvps.reduce((acc, curr) => acc + curr.attendance, 0) +
       Number(reservedPax)
