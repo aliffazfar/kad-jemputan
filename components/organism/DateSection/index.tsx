@@ -13,7 +13,7 @@ export default function DateSection() {
   return (
     <Box
       sx={{
-        backgroundColor: '#fafaf9',
+        backgroundColor: '#fffbf3',
         backgroundImage: "url('/bg.webp')",
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -37,7 +37,7 @@ export default function DateSection() {
           <AkadSection
             // icon={
             //   <FaHandHoldingHeart
-            //     style={{ color: '#4F6057', fontSize: '2.4rem' }}
+            //     style={{ color: '#64332e', fontSize: '2.4rem' }}
             //   />
             // }
             title={data.eventType}
@@ -55,7 +55,7 @@ export default function DateSection() {
           <AkadSection
             icon={
               <GiBigDiamondRing
-                style={{ color: '#4F6057', fontSize: '2.4rem' }}
+                style={{ color: '#64332e', fontSize: '2.4rem' }}
               />
             }
             title='Resepsi'

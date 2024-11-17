@@ -40,12 +40,11 @@ export default function AkadSection({
 
   return (
     <Container
-      sx={{ background: '#fff' }}
+      sx={{ background: 'rgba(255, 255, 255, 0.29)' }}
       borderRadius={20}
       py={4}
       my={8}
       boxShadow='xl'
-      opacity={0.9}
     >
       <VStack color='brand.100' gap={1}>
         {icon}

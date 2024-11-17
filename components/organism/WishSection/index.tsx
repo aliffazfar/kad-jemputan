@@ -31,14 +31,14 @@ export default function WishSection() {
           <Heading
             textAlign='center'
             color='brand.100'
-            bgColor={'#fafaf9'}
+            bgColor={'#fffbf3'}
             id='ucapan'
           >
             Kehadiran
           </Heading>
         </AttentionSeeker>
         <WishCount tidakHadirTotal={tidakHadirTotal} hadirTotal={hadirTotal} />
-        <Center sx={{ background: '#fafaf9' }} gap={4} py={10}>
+        <Center sx={{ background: '#fffbf3' }} gap={4} py={10}>
           <CustomPrimaryButton
             size='sm'
             title='Sahkan Kehadiran'
@@ -51,7 +51,7 @@ export default function WishSection() {
           />
         </Center>
         {rsvps.length > 0 ? (
-          <Box sx={{ background: '#fafaf9' }} px={6} pb={20} id='programme'>
+          <Box sx={{ background: '#fffbf3' }} px={6} pb={20} id='programme'>
             <Container
               sx={{ background: 'rgba(255, 255, 255, 0.29)' }}
               borderRadius={20}
@@ -68,7 +68,7 @@ export default function WishSection() {
             </Container>
           </Box>
         ) : (
-          <VStack pb={20} sx={{ background: '#fafaf9' }} />
+          <VStack pb={20} sx={{ background: '#fffbf3' }} />
         )}
       </Fade>
     </Fragment>

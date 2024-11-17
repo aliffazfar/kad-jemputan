@@ -19,9 +19,9 @@ export default function Paginate({
         onClick={() => ChangePage(i)}
         size='xs'
         variant='ghost'
-        color='#4F6057'
+        color='#64332e'
         fontWeight={i === number ? 'bold' : 'normal'}
-        borderBottom={i === number ? '2px solid #4F6057' : 'none'}
+        borderBottom={i === number ? '2px solid #64332e' : 'none'}
         _hover={{
           bg: 'transparent',
           opacity: 0.8,
@@ -57,7 +57,7 @@ export default function Paginate({
               onClick={Prev}
               size='xs'
               variant='ghost'
-              color='#4F6057'
+              color='#64332e'
               _hover={{
                 bg: 'transparent',
                 opacity: 0.8,
@@ -70,7 +70,7 @@ export default function Paginate({
               onClick={Next}
               size='xs'
               variant='ghost'
-              color='#4F6057'
+              color='#64332e'
               _hover={{
                 bg: 'transparent',
                 opacity: 0.8,

@@ -15,7 +15,7 @@ export default function GallerySection() {
   const data = useDataStore((state) => state.data)
   if (!data.galleries) return null
   return (
-    <Box sx={{ background: '#fafaf9' }} p={6} id='gallery'>
+    <Box sx={{ background: '#fffbf3' }} p={6} id='gallery'>
       <Fade duration={2000}>
         <AttentionSeeker effect='pulse'>
           <Heading textAlign='center' mb={8} color='brand.100'>

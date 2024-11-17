@@ -12,7 +12,7 @@
 
 .petal {
   position: absolute;
-  background: linear-gradient(to right, #24243e, #4f6057, #0f0c29);
+  background: linear-gradient(to right, #24243e, #64332e, #0f0c29);
   border-radius: 50%;
   opacity: 0;
   animation: fall 19s linear infinite;

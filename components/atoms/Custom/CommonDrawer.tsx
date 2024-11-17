@@ -53,6 +53,7 @@ export const CommonDrawer = ({
         px={2}
         pt={2}
         pb={4}
+        bgColor={'#fffbf3'}
       >
         <DrawerHeader
           borderBottomWidth='1px'

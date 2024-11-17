@@ -11,7 +11,7 @@ export function InitialSpinner() {
       backgroundSize='cover'
       backgroundPosition='center'
       sx={{
-        backgroundColor: '#fafaf9',
+        backgroundColor: '#fffbf3',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

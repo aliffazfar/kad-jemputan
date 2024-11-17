@@ -154,7 +154,7 @@ const GiftModal = ({ onClose, isOpen }: GiftModalProps) => {
                 py={1}
                 borderWidth={1}
                 borderRadius='md'
-                bg={'#fafaf9'}
+                bg={'#fffbf3'}
                 display='flex'
                 alignItems='center'
                 justifyContent='space-between'

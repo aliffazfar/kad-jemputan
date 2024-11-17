@@ -211,7 +211,7 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
             margin={3}
             p={0}
             borderRadius={10}
-            bgColor='white'
+            bgColor='#fffbf3'
             overflowY='auto'
             flex={1}
           >

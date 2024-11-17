@@ -24,7 +24,7 @@ export default function ModalItem({ onClose, isOpen }: any) {
         w='100%'
         align='center'
         justify='center'
-        bg='#fafaf9'
+        bg='#fffbf3'
         backgroundImage="url('/bg.webp')"
         backgroundRepeat='no-repeat'
         backgroundSize='cover'

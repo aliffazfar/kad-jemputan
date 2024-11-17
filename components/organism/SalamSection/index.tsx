@@ -15,7 +15,7 @@ export default function SalamSection() {
   const data = useDataStore((state) => state.data)
 
   return (
-    <Box sx={{ background: '#fafaf9' }} p={6} id='salam'>
+    <Box sx={{ background: '#fffbf3' }} p={6} id='salam'>
       <Container
         sx={{ background: 'rgba(255, 255, 255, 0.29)' }}
         borderRadius={20}
@@ -32,7 +32,7 @@ export default function SalamSection() {
                 width={150}
                 height={30}
                 loading='lazy'
-                style={{ color: '#4F6057' }}
+                style={{ color: '#64332e' }}
               />
               <Text fontSize={12} fontFamily='Poly' color='brand.100'>
                 Assalamu'alaikum Wr. Wb.

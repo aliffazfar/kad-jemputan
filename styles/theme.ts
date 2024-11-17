@@ -23,13 +23,13 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: '#fafaf9',
+        bg: '#fffbf3',
       },
     },
   },
   colors: {
     brand: {
-      100: '#4F6057',
+      100: '#64332e',
       200: '#',
     },
   },
