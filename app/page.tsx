@@ -20,12 +20,14 @@ import dynamic from 'next/dynamic'
 import ProgrammeSection from '@/components/organism/ProgrammeSection'
 import dayjs from 'dayjs'
 import 'dayjs/locale/ms'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 import { InitialSpinner } from '@/components/atoms/Custom/InitialSpinner'
 import { PetalBackground } from '@/components/atoms/Custom/ParticleBackground'
 import { initialData } from './api/wedding-details/initialData'
-import { useRsvpStore } from '@/store/rsvps.store'
+import { RsvpData, useRsvpStore } from '@/store/rsvps.store'
 
 dayjs.locale('ms')
+dayjs.extend(customParseFormat)
 
 const Navbar = dynamic(() => import('@/components/moleculs/Navbar'), {
   ssr: false,
@@ -41,21 +43,36 @@ export default function HomePage() {
   const [isOpen, setOpen] = useState(true)
   const isFirstMount = useRef(true)
 
+  const sortRsvpsByTimestamp = (rsvpData: RsvpData[]) => {
+    return [...rsvpData].sort((a, b) => {
+      const dateA = dayjs(a.timestamp, 'DD/MM/YYYY, HH:mm:ss')
+      const dateB = dayjs(b.timestamp, 'DD/MM/YYYY, HH:mm:ss')
+      return dateB.diff(dateA)
+    })
+  }
+
   const getWeddingData = useCallback(async () => {
     try {
-      const response = await fetch('/api/wedding-details', {
-        cache: 'no-store',
-      })
-      const responseRsvp = await fetch('/api/rsvps', { cache: 'no-store' })
-      if (!response.ok && !responseRsvp.ok) {
+      const [weddingResponse, rsvpResponse] = await Promise.all([
+        fetch('/api/wedding-details', { cache: 'no-store' }),
+        fetch('/api/rsvps', { cache: 'no-store' }),
+      ])
+
+      if (!weddingResponse.ok || !rsvpResponse.ok) {
         throw new Error('Failed to fetch wedding details')
       }
-      const data = await response.json()
-      const rsvpData = await responseRsvp.json()
-      setData(data)
-      if (rsvpData.length > 0) setRsvps(rsvpData)
-    } catch (err) {
-      console.log('FAIL MAT')
+
+      const weddingData = await weddingResponse.json()
+      const rsvpData = await rsvpResponse.json()
+
+      setData(weddingData)
+
+      if (rsvpData.length > 0) {
+        const sortedRsvps = sortRsvpsByTimestamp(rsvpData)
+        setRsvps(sortedRsvps)
+      }
+    } catch (error) {
+      console.error('Fetch failed:', error)
       setData(initialData)
     } finally {
       setIsLoading(false)
