@@ -72,7 +72,7 @@ export default function RsvpForm({ onClose, isOpen }: RsvpFormProps) {
     const hadirTotal =
       rsvps.reduce((acc, curr) => acc + curr.attendance, 0) +
       Number(reservedPax)
-    if (hadirTotal > data.noOfPax) {
+    if (hadirTotal >= data.noOfPax) {
       setCloseRsvp(true)
       setView(CURRENT_VIEW.CLOSED_RSVP)
     } else {
